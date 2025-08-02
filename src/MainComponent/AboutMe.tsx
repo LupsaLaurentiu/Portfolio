@@ -10,7 +10,7 @@ export default function AboutMe() {
           I'm highly adaptable, a strong communicator, and actively engaged in every project, whether solo or as part of a team. I stay up to date with the latest technologies and best practices, always eager to learn and grow with every new challenge.
         </p>
         <p>
-          Outside of coding, you'll find me exploring design concepts, laughing my ass off with my friends on Discord or going on a hike. I'm always open to new collaborations, exciting projects, and fresh ideas!
+          Outside of coding, you'll find me exploring design concepts, laughing with my friends on Discord or even going on a hike in the Carpathian Mountains. I'm always open to new collaborations, exciting projects, and fresh ideas!
         </p>
       </div>
     </section>

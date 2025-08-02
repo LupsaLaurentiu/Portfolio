@@ -21,6 +21,16 @@ export default function ProfileSidebart() {
         <div className="flex gap-2 mb-1">
             <a href="#" className="inline-flex items-center gap-1 text-white border-2 px-3 md:px-4 py-2 rounded-lg font-semibold hover:bg-neutral-700/80 transition">
                 Resume
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="white"
+                  className="ml-2 inline-block"
+                >
+                  <path d="M12 16.25c-.41 0-.75-.34-.75-.75V5.81l-3.22 3.22a.75.75 0 1 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 1 1-1.06 1.06l-3.22-3.22v9.69c0 .41-.34.75-.75.75Zm-7 3a.75.75 0 0 1 0-1.5h14a.75.75 0 0 1 0 1.5H5Z"/>
+                </svg>
             </a>
             {/* Social icons */}
             <a
