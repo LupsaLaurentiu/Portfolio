@@ -51,15 +51,24 @@ export default function Experience() {
   return (
     <section className="mb-10 max-w-3xl">
       <h2 className="text-2xl md:text-3xl font-bold mb-4">Experience</h2>
-      <div className="space-y-8">
-        {experienceList.map(exp => (
-          <div key={exp.company + exp.period}>
-            <div className="flex items-center gap-3">
-              <img
-                src={exp.logo}
-                alt={exp.company + " Logo"}
-                className="w-14 h-14 rounded-full border-2 bg-white object-contain"
-              />
+      {/* Timeline container */}
+      <div className="relative pl-8">
+        {/* Linia verticală pe toată înălțimea cardurilor */}
+        <div className="absolute left-1 top-0 w-0.5 h-full bg-neutral-700 z-0" aria-hidden="true" />
+        <div className="space-y-16">
+          {experienceList.map((exp, idx) => (
+            <div key={exp.company + exp.period} className="relative flex items-start">
+              {/* Timeline dot și logo */}
+              <div className="flex flex-col items-center mr-5 z-10">
+                <span className="w-14 h-14 rounded-full border-2 bg-white flex items-center justify-center overflow-hidden">
+                  <img
+                    src={exp.logo}
+                    alt={exp.company + " Logo"}
+                    className="w-14 h-14 object-contain rounded-full"
+                  />
+                </span>
+              </div>
+              {/* Card content */}
               <div>
                 <span className="font-semibold text-white text-lg">
                   {exp.position}
@@ -70,15 +79,15 @@ export default function Experience() {
                 <div className="text-neutral-400 text-sm mb-2">
                   {exp.period}
                 </div>
+                <ul className="list-disc list-inside text-neutral-300 text-base space-y-1">
+                  {exp.responsibilities.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <ul className="list-disc list-inside text-neutral-300 text-base space-y-1">
-              {exp.responsibilities.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
