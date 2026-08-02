@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  min-height: 100%;
+}
+
+.highlight-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffffff00 0%,
+    #ececec 40%,
+    #e1e1e1 50%,
+    #ececec 60%,
+    #ffffff00 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) 1 forwards;
+}
+
+@keyframes sweep {
+  from {
+    background-position-x: -150%;
+  }
+
+  to {
+    background-position-x: 150%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+.project-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #525252 transparent;
+}
+
+.project-modal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-modal-scroll::-webkit-scrollbar-thumb {
+  background: #525252;
+  border: 2px solid #171717;
+  border-radius: 999px;
+}
+
+.project-modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
