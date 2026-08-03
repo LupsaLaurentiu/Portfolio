@@ -6,6 +6,7 @@ import scraperPipeline from "../assets/scraper-pipeline.svg";
 import sunshineArchitecture from "../assets/sunshine-resort-architecture.svg";
 import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
+import topSidraPreview3 from "../assets/top-sidra-responsive-preview-3.png";
 
 type ProjectType =
   | "Client project"
@@ -242,6 +243,13 @@ const projectList: Project[] = [
         src: topSidraPreview2,
         alt: "TOP SIDRA EXPERT website preview",
         label: "Gallery page",
+        caption:
+          "The website was designed and implemented as a responsive production experience, with desktop and mobile layouts built from reusable React components.",
+      },
+      {
+        src: topSidraPreview3,
+        alt: "TOP SIDRA EXPERT website preview",
+        label: "Landing page",
         caption:
           "The website was designed and implemented as a responsive production experience, with desktop and mobile layouts built from reusable React components.",
       },
