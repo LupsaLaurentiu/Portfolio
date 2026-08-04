@@ -7,6 +7,20 @@ import sunshineArchitecture from "../assets/sunshine-resort-architecture.svg";
 import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
 import topSidraPreview3 from "../assets/top-sidra-responsive-preview-3.png";
+import SunshineResort1 from "../assets/Sunshine-resort-1.png";
+import SunshineResort2 from "../assets/Sunshine-resort-1.png";
+import SunshineResort3 from "../assets/Sunshine-resort-1.png";
+import SunshineResort4 from "../assets/Sunshine-resort-1.png";
+import SunshineResort5 from "../assets/Sunshine-resort-1.png";
+import SunshineResort6 from "../assets/Sunshine-resort-1.png";
+import SunshineResort7 from "../assets/Sunshine-resort-1.png";
+import SunshineResort8 from "../assets/Sunshine-resort-1.png";
+import SunshineResort9 from "../assets/Sunshine-resort-1.png";
+import SunshineResort10 from "../assets/Sunshine-resort-1.png";
+import SunshineResort11 from "../assets/Sunshine-resort-1.png";
+import SunshineResort12 from "../assets/Sunshine-resort-1.png";
+import SunshineResort13 from "../assets/Sunshine-resort-1.png";
+import SunshineResort14 from "../assets/Sunshine-resort-1.png";
 
 type ProjectType =
   | "Client project"
@@ -142,13 +156,111 @@ const projectList: Project[] = [
       "Stripe",
     ],
     media: [
-      {
-        src: sunshineArchitecture,
-        alt: "Sunshine Resort system architecture",
-        label: "System architecture",
-        caption:
-          "One Next.js frontend serves the public website, booking engine and admin PMS. All three surfaces use a single NestJS API with Prisma, PostgreSQL and Stripe payment processing.",
-      },
+    {
+      src: sunshineArchitecture,
+      alt: "Sunshine Resort system architecture",
+      label: "System architecture",
+      caption:
+        "High-level architecture showing the public website, booking engine and admin PMS powered by a single NestJS backend with Prisma, PostgreSQL and Stripe.",
+    },
+    {
+      src: SunshineResort1,
+      alt: "Sunshine Resort homepage",
+      label: "Homepage",
+      caption:
+        "Luxury landing page designed to communicate the resort's premium identity and guide visitors toward direct online bookings.",
+    },
+    {
+      src: SunshineResort2,
+      alt: "Sunshine Resort brand storytelling section",
+      label: "Brand storytelling",
+      caption:
+        "Editorial-style content introducing the resort's concept, atmosphere and adults-only hospitality experience.",
+    },
+    {
+      src: SunshineResort3,
+      alt: "Sunshine Resort apartment overview",
+      label: "Apartment overview",
+      caption:
+        "Accommodation presentation featuring apartment categories, key characteristics and direct access to detailed room pages.",
+    },
+    {
+      src: SunshineResort4,
+      alt: "Sunshine Resort apartment details page",
+      label: "Apartment details",
+      caption:
+        "Detailed apartment page combining photography, specifications and clear calls to action to support booking decisions.",
+    },
+    {
+      src: SunshineResort5,
+      alt: "Sunshine Resort apartment amenities",
+      label: "Amenities",
+      caption:
+        "Structured presentation of apartment facilities and included amenities in an elegant, easy-to-scan layout.",
+    },
+    {
+      src: SunshineResort6,
+      alt: "Sunshine Resort allocation engine",
+      label: "allocation engine",
+      caption:
+        "Interactive allocation interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
+    },
+    {
+      src: SunshineResort7,
+      alt: "Sunshine Resort booking engine",
+      label: "Booking engine",
+      caption:
+        "Interactive booking interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
+    },
+    {
+      src: SunshineResort8,
+      alt: "Sunshine Resort reservation selection flow",
+      label: "Reservation flow",
+      caption:
+        "Apartment selection workflow with occupancy configuration, live price calculation and a detailed reservation breakdown before submission.",
+    },
+    {
+      src: SunshineResort9,
+      alt: "Sunshine Resort admin dashboard",
+      label: "Admin dashboard",
+      caption:
+        "Operational dashboard providing a real-time overview of occupancy, arrivals, departures, revenue and pending reservation activity.",
+    },
+    {
+      src: SunshineResort10,
+      alt: "Sunshine Resort blocked periods management",
+      label: "Availability management",
+      caption:
+        "Administrative interface for creating and managing maintenance periods and internal apartment blocks.",
+    },
+    {
+      src: SunshineResort11,
+      alt: "Sunshine Resort arrivals and recent reservations",
+      label: "Daily operations",
+      caption:
+        "Operational view of scheduled arrivals, departures and recently created reservations for day-to-day property management.",
+    },
+    {
+      src: SunshineResort12,
+      alt: "Sunshine Resort reservation details",
+      label: "Reservation management",
+      caption:
+        "Comprehensive reservation view with guest details, allocated apartments, financial information and available operational actions.",
+    },
+    {
+      src: SunshineResort13,
+      alt: "Sunshine Resort reservation export settings",
+      label: "Reservation export",
+      caption:
+        "Configurable Excel export with filters for reservation status, booking source, date range and customer information.",
+    },
+    {
+      src: SunshineResort14,
+      alt: "Sunshine Resort PMS inventory calendar",
+      label: "PMS calendar",
+      caption:
+        "Thirty-day inventory calendar combining confirmed reservations, pending bookings, maintenance blocks and external iCal events.",
+    },
     ],
   },
   {
