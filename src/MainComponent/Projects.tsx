@@ -8,19 +8,19 @@ import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
 import topSidraPreview3 from "../assets/top-sidra-responsive-preview-3.png";
 import SunshineResort1 from "../assets/Sunshine-resort-1.png";
-import SunshineResort2 from "../assets/Sunshine-resort-1.png";
-import SunshineResort3 from "../assets/Sunshine-resort-1.png";
-import SunshineResort4 from "../assets/Sunshine-resort-1.png";
-import SunshineResort5 from "../assets/Sunshine-resort-1.png";
-import SunshineResort6 from "../assets/Sunshine-resort-1.png";
-import SunshineResort7 from "../assets/Sunshine-resort-1.png";
-import SunshineResort8 from "../assets/Sunshine-resort-1.png";
-import SunshineResort9 from "../assets/Sunshine-resort-1.png";
-import SunshineResort10 from "../assets/Sunshine-resort-1.png";
-import SunshineResort11 from "../assets/Sunshine-resort-1.png";
-import SunshineResort12 from "../assets/Sunshine-resort-1.png";
-import SunshineResort13 from "../assets/Sunshine-resort-1.png";
-import SunshineResort14 from "../assets/Sunshine-resort-1.png";
+import SunshineResort2 from "../assets/Sunshine-resort-2.png";
+import SunshineResort3 from "../assets/Sunshine-resort-3.png";
+import SunshineResort4 from "../assets/Sunshine-resort-4.png";
+import SunshineResort5 from "../assets/Sunshine-resort-5.png";
+import SunshineResort6 from "../assets/Sunshine-resort-6.png";
+import SunshineResort7 from "../assets/Sunshine-resort-7.png";
+import SunshineResort8 from "../assets/Sunshine-resort-8.png";
+import SunshineResort9 from "../assets/Sunshine-resort-9.png";
+import SunshineResort10 from "../assets/Sunshine-resort-10.png";
+import SunshineResort11 from "../assets/Sunshine-resort-11.png";
+import SunshineResort12 from "../assets/Sunshine-resort-12.png";
+import SunshineResort13 from "../assets/Sunshine-resort-13.png";
+import SunshineResort14 from "../assets/Sunshine-resort-14.png";
 
 type ProjectType =
   | "Client project"
