@@ -135,7 +135,7 @@ function getTechColorClasses(technology: string) {
 
 const projectList: Project[] = [
   {
-    title: "Sunshine Resort",
+    title: "Sunshine Resort - live soon",
     description:
       "Full-stack hospitality platform for a premium resort, combining a marketing website, a custom booking engine and an admin property management dashboard (mini PMS).",
     ownership:
