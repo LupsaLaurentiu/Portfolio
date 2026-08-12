@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { useLenis } from "lenis/react";
+
 import aiReceptionistArchitecture from "../assets/ai-receptionist-architecture.svg";
 import scraperPipeline from "../assets/scraper-pipeline.svg";
 import sunshineArchitecture from "../assets/sunshine-resort-architecture.svg";
+
 import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
 import topSidraPreview3 from "../assets/top-sidra-responsive-preview-3.png";
+
 import SunshineResort1 from "../assets/Sunshine-resort-1.png";
 import SunshineResort2 from "../assets/Sunshine-resort-2.png";
 import SunshineResort3 from "../assets/Sunshine-resort-3.png";
@@ -135,12 +138,14 @@ function getTechColorClasses(technology: string) {
 
 const projectList: Project[] = [
   {
-    title: "Sunshine Resort - live soon",
+    title: "Sunshine Resort - Demo",
     description:
       "Full-stack hospitality platform for a premium resort, combining a marketing website, a custom booking engine and an admin property management dashboard (mini PMS).",
     ownership:
       "Independently designed and developed the entire platform, from system architecture and database design to the user interfaces, booking workflows and payment integration.",
     projectType: "Client project",
+    liveUrl: "https://sunshine-resort-web.vercel.app/ro",
+    github: "https://github.com/LupsaLaurentiu/sunshine-resort",
     highlights: [
       "Public website, booking engine and admin PMS",
       "Real-time availability and seasonal pricing",
@@ -156,113 +161,114 @@ const projectList: Project[] = [
       "Stripe",
     ],
     media: [
-    {
-      src: sunshineArchitecture,
-      alt: "Sunshine Resort system architecture",
-      label: "System architecture",
-      caption:
-        "High-level architecture showing the public website, booking engine and admin PMS powered by a single NestJS backend with Prisma, PostgreSQL and Stripe.",
-    },
-    {
-      src: SunshineResort1,
-      alt: "Sunshine Resort homepage",
-      label: "Homepage",
-      caption:
-        "Luxury landing page designed to communicate the resort's premium identity and guide visitors toward direct online bookings.",
-    },
-    {
-      src: SunshineResort2,
-      alt: "Sunshine Resort brand storytelling section",
-      label: "Brand storytelling",
-      caption:
-        "Editorial-style content introducing the resort's concept, atmosphere and adults-only hospitality experience.",
-    },
-    {
-      src: SunshineResort3,
-      alt: "Sunshine Resort apartment overview",
-      label: "Apartment overview",
-      caption:
-        "Accommodation presentation featuring apartment categories, key characteristics and direct access to detailed room pages.",
-    },
-    {
-      src: SunshineResort4,
-      alt: "Sunshine Resort apartment details page",
-      label: "Apartment details",
-      caption:
-        "Detailed apartment page combining photography, specifications and clear calls to action to support booking decisions.",
-    },
-    {
-      src: SunshineResort5,
-      alt: "Sunshine Resort apartment amenities",
-      label: "Amenities",
-      caption:
-        "Structured presentation of apartment facilities and included amenities in an elegant, easy-to-scan layout.",
-    },
-    {
-      src: SunshineResort6,
-      alt: "Sunshine Resort allocation engine",
-      label: "allocation engine",
-      caption:
-        "Interactive allocation interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
-    },
-    {
-      src: SunshineResort7,
-      alt: "Sunshine Resort booking engine",
-      label: "Booking engine",
-      caption:
-        "Interactive booking interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
-    },
-    {
-      src: SunshineResort8,
-      alt: "Sunshine Resort reservation selection flow",
-      label: "Reservation flow",
-      caption:
-        "Apartment selection workflow with occupancy configuration, live price calculation and a detailed reservation breakdown before submission.",
-    },
-    {
-      src: SunshineResort9,
-      alt: "Sunshine Resort admin dashboard",
-      label: "Admin dashboard",
-      caption:
-        "Operational dashboard providing a real-time overview of occupancy, arrivals, departures, revenue and pending reservation activity.",
-    },
-    {
-      src: SunshineResort10,
-      alt: "Sunshine Resort blocked periods management",
-      label: "Availability management",
-      caption:
-        "Administrative interface for creating and managing maintenance periods and internal apartment blocks.",
-    },
-    {
-      src: SunshineResort11,
-      alt: "Sunshine Resort arrivals and recent reservations",
-      label: "Daily operations",
-      caption:
-        "Operational view of scheduled arrivals, departures and recently created reservations for day-to-day property management.",
-    },
-    {
-      src: SunshineResort12,
-      alt: "Sunshine Resort reservation details",
-      label: "Reservation management",
-      caption:
-        "Comprehensive reservation view with guest details, allocated apartments, financial information and available operational actions.",
-    },
-    {
-      src: SunshineResort13,
-      alt: "Sunshine Resort reservation export settings",
-      label: "Reservation export",
-      caption:
-        "Configurable Excel export with filters for reservation status, booking source, date range and customer information.",
-    },
-    {
-      src: SunshineResort14,
-      alt: "Sunshine Resort PMS inventory calendar",
-      label: "PMS calendar",
-      caption:
-        "Thirty-day inventory calendar combining confirmed reservations, pending bookings, maintenance blocks and external iCal events.",
-    },
+      {
+        src: sunshineArchitecture,
+        alt: "Sunshine Resort system architecture",
+        label: "System architecture",
+        caption:
+          "High-level architecture showing the public website, booking engine and admin PMS powered by a single NestJS backend with Prisma, PostgreSQL and Stripe.",
+      },
+      {
+        src: SunshineResort1,
+        alt: "Sunshine Resort homepage",
+        label: "Homepage",
+        caption:
+          "Luxury landing page designed to communicate the resort's premium identity and guide visitors toward direct online bookings.",
+      },
+      {
+        src: SunshineResort2,
+        alt: "Sunshine Resort brand storytelling section",
+        label: "Brand storytelling",
+        caption:
+          "Editorial-style content introducing the resort's concept, atmosphere and adults-only hospitality experience.",
+      },
+      {
+        src: SunshineResort3,
+        alt: "Sunshine Resort apartment overview",
+        label: "Apartment overview",
+        caption:
+          "Accommodation presentation featuring apartment categories, key characteristics and direct access to detailed room pages.",
+      },
+      {
+        src: SunshineResort4,
+        alt: "Sunshine Resort apartment details page",
+        label: "Apartment details",
+        caption:
+          "Detailed apartment page combining photography, specifications and clear calls to action to support booking decisions.",
+      },
+      {
+        src: SunshineResort5,
+        alt: "Sunshine Resort apartment amenities",
+        label: "Amenities",
+        caption:
+          "Structured presentation of apartment facilities and included amenities in an elegant, easy-to-scan layout.",
+      },
+      {
+        src: SunshineResort6,
+        alt: "Sunshine Resort allocation engine",
+        label: "Allocation engine",
+        caption:
+          "Interactive allocation interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
+      },
+      {
+        src: SunshineResort7,
+        alt: "Sunshine Resort booking engine",
+        label: "Booking engine",
+        caption:
+          "Interactive booking interface with date selection, real-time availability, seasonal pricing and an automatically updated reservation summary.",
+      },
+      {
+        src: SunshineResort8,
+        alt: "Sunshine Resort reservation selection flow",
+        label: "Reservation flow",
+        caption:
+          "Apartment selection workflow with occupancy configuration, live price calculation and a detailed reservation breakdown before submission.",
+      },
+      {
+        src: SunshineResort9,
+        alt: "Sunshine Resort admin dashboard",
+        label: "Admin dashboard",
+        caption:
+          "Operational dashboard providing a real-time overview of occupancy, arrivals, departures, revenue and pending reservation activity.",
+      },
+      {
+        src: SunshineResort10,
+        alt: "Sunshine Resort blocked periods management",
+        label: "Availability management",
+        caption:
+          "Administrative interface for creating and managing maintenance periods and internal apartment blocks.",
+      },
+      {
+        src: SunshineResort11,
+        alt: "Sunshine Resort arrivals and recent reservations",
+        label: "Daily operations",
+        caption:
+          "Operational view of scheduled arrivals, departures and recently created reservations for day-to-day property management.",
+      },
+      {
+        src: SunshineResort12,
+        alt: "Sunshine Resort reservation details",
+        label: "Reservation management",
+        caption:
+          "Comprehensive reservation view with guest details, allocated apartments, financial information and available operational actions.",
+      },
+      {
+        src: SunshineResort13,
+        alt: "Sunshine Resort reservation export settings",
+        label: "Reservation export",
+        caption:
+          "Configurable Excel export with filters for reservation status, booking source, date range and customer information.",
+      },
+      {
+        src: SunshineResort14,
+        alt: "Sunshine Resort PMS inventory calendar",
+        label: "PMS calendar",
+        caption:
+          "Thirty-day inventory calendar combining confirmed reservations, pending bookings, maintenance blocks and external iCal events.",
+      },
     ],
   },
+
   {
     title: "Website Technologies Scraper",
     description:
@@ -296,6 +302,7 @@ const projectList: Project[] = [
       },
     ],
   },
+
   {
     title: "AI Receptionist for Clinics",
     description:
@@ -328,6 +335,7 @@ const projectList: Project[] = [
       },
     ],
   },
+
   {
     title: "TOP SIDRA EXPERT",
     description:
@@ -342,7 +350,13 @@ const projectList: Project[] = [
       "Reusable React component architecture",
       "Production build and deployment",
     ],
-    tech: ["React", "TypeScript", "Vite", "Responsive Design", "SEO"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Responsive Design",
+      "SEO",
+    ],
     media: [
       {
         src: topSidraPreview,
@@ -390,6 +404,7 @@ export default function Projects() {
 
   const closeProject = useCallback(() => {
     setVisible(false);
+
     window.setTimeout(() => {
       setOpenIndex(null);
       setSlideIndex(0);
@@ -413,7 +428,9 @@ export default function Projects() {
 
   const showNextSlide = useCallback(() => {
     setSlideIndex((current) =>
-      media.length === 0 ? 0 : (current + 1) % media.length,
+      media.length === 0
+        ? 0
+        : (current + 1) % media.length,
     );
   }, [media.length]);
 
@@ -489,7 +506,10 @@ export default function Projects() {
   }, [openIndex]);
 
   return (
-    <section id="projects" className="mb-10 max-w-3xl scroll-mt-24">
+    <section
+      id="projects"
+      className="mb-10 max-w-3xl scroll-mt-24"
+    >
       <div className="mb-5">
         <h2 className="mb-2 text-2xl font-bold md:text-3xl">
           Projects
@@ -510,7 +530,10 @@ export default function Projects() {
             aria-label={`Open details for ${project.title}`}
             onClick={() => openProject(index)}
             onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") {
+              if (
+                event.key === "Enter" ||
+                event.key === " "
+              ) {
                 event.preventDefault();
                 openProject(index);
               }
@@ -538,7 +561,9 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     title="View live project"
                     aria-label={`Open live project for ${project.title}`}
-                    onClick={(event) => event.stopPropagation()}
+                    onClick={(event) =>
+                      event.stopPropagation()
+                    }
                     className="flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-neutral-700"
                   >
                     <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
@@ -552,7 +577,9 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     title="View on GitHub"
                     aria-label={`${project.title} on GitHub`}
-                    onClick={(event) => event.stopPropagation()}
+                    onClick={(event) =>
+                      event.stopPropagation()
+                    }
                     className="flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-neutral-700"
                   >
                     <i className="fa-brands fa-github text-lg" />
@@ -619,7 +646,9 @@ export default function Projects() {
             aria-modal="true"
             aria-labelledby="project-modal-title"
             ref={modalWrapperRef}
-            onClick={(event) => event.stopPropagation()}
+            onClick={(event) =>
+              event.stopPropagation()
+            }
             className={`project-modal-scroll relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-neutral-700 bg-neutral-900 transition-all duration-200 ${
               visible
                 ? "scale-100 opacity-100"
@@ -628,126 +657,32 @@ export default function Projects() {
           >
             <div ref={modalContentRef}>
               <header className="sticky top-0 z-20 flex items-center justify-between gap-4 border-b border-neutral-800 bg-neutral-900/95 px-6 py-4 backdrop-blur sm:px-8">
-              <div className="min-w-0">
-                <h3
-                  id="project-modal-title"
-                  className="truncate text-xl font-bold text-white sm:text-2xl"
-                >
-                  {activeProject.title}
-                </h3>
-
-                {activeProject.projectType && (
-                  <p className="mt-0.5 text-xs text-neutral-400">
-                    {activeProject.projectType}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex shrink-0 items-center gap-1">
-                {activeProject.liveUrl && (
-                  <a
-                    href={activeProject.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="View live project"
-                    aria-label={`Open live project for ${activeProject.title}`}
-                    className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-300 transition hover:bg-neutral-800 hover:text-white"
+                <div className="min-w-0">
+                  <h3
+                    id="project-modal-title"
+                    className="truncate text-xl font-bold text-white sm:text-2xl"
                   >
-                    <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
-                  </a>
-                )}
+                    {activeProject.title}
+                  </h3>
 
-                {activeProject.github && (
-                  <a
-                    href={activeProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="View on GitHub"
-                    aria-label={`${activeProject.title} on GitHub`}
-                    className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-300 transition hover:bg-neutral-800 hover:text-white"
-                  >
-                    <i className="fa-brands fa-github text-xl" />
-                  </a>
-                )}
-
-                <button
-                  type="button"
-                  onClick={closeProject}
-                  aria-label="Close project details"
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-neutral-300 transition hover:bg-neutral-700 hover:text-white"
-                >
-                  <i className="fa-solid fa-xmark text-lg" />
-                </button>
-              </div>
-            </header>
-
-            <div className="p-6 pr-7 sm:p-8 sm:pr-9">
-              <p className="mb-5 text-base leading-relaxed text-neutral-300">
-                {activeProject.description}
-              </p>
-
-              {activeProject.ownership && (
-                <div className="mb-6 rounded-lg border border-neutral-700 bg-neutral-800/50 p-4">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                    Project ownership
-                  </p>
-
-                  <p className="text-sm leading-relaxed text-neutral-200">
-                    {activeProject.ownership}
-                  </p>
+                  {activeProject.projectType && (
+                    <p className="mt-0.5 text-xs text-neutral-400">
+                      {activeProject.projectType}
+                    </p>
+                  )}
                 </div>
-              )}
 
-              {activeProject.highlights && (
-                <div className="mb-6">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                    Key capabilities
-                  </p>
-
-                  <ul className="space-y-1.5">
-                    {activeProject.highlights.map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="flex items-start gap-2 text-sm text-neutral-300"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <div className="mb-6">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                  Technology stack
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {activeProject.tech.map((technology) => (
-                    <span
-                      key={technology}
-                      className={`rounded-full px-3 py-0.5 text-xs font-semibold ${getTechColorClasses(
-                        technology,
-                      )}`}
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {(activeProject.liveUrl || activeProject.github) && (
-                <div className="mb-6 flex flex-wrap gap-3">
+                <div className="flex shrink-0 items-center gap-1">
                   {activeProject.liveUrl && (
                     <a
                       href={activeProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200"
+                      title="View live project"
+                      aria-label={`Open live project for ${activeProject.title}`}
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-300 transition hover:bg-neutral-800 hover:text-white"
                     >
-                      <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
-                      Visit live website
+                      <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
                     </a>
                   )}
 
@@ -756,104 +691,212 @@ export default function Projects() {
                       href={activeProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-2.5 text-sm font-semibold text-white transition hover:border-neutral-500 hover:bg-neutral-700"
+                      title="View on GitHub"
+                      aria-label={`${activeProject.title} on GitHub`}
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-300 transition hover:bg-neutral-800 hover:text-white"
                     >
-                      <i className="fa-brands fa-github" />
-                      View source code
+                      <i className="fa-brands fa-github text-xl" />
                     </a>
                   )}
+
+                  <button
+                    type="button"
+                    onClick={closeProject}
+                    aria-label="Close project details"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-800 text-neutral-300 transition hover:bg-neutral-700 hover:text-white"
+                  >
+                    <i className="fa-solid fa-xmark text-lg" />
+                  </button>
                 </div>
-              )}
+              </header>
 
-              {activeMedia && (
-                <section aria-label={`${activeProject.title} project gallery`}>
-                  <div className="mb-2 flex items-end justify-between gap-3">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
-                        Project gallery
-                      </p>
+              <div className="p-6 pr-7 sm:p-8 sm:pr-9">
+                <p className="mb-5 text-base leading-relaxed text-neutral-300">
+                  {activeProject.description}
+                </p>
 
-                      {activeMedia.label && (
-                        <p className="mt-1 text-sm font-semibold text-neutral-200">
-                          {activeMedia.label}
+                {activeProject.ownership && (
+                  <div className="mb-6 rounded-lg border border-neutral-700 bg-neutral-800/50 p-4">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                      Project ownership
+                    </p>
+
+                    <p className="text-sm leading-relaxed text-neutral-200">
+                      {activeProject.ownership}
+                    </p>
+                  </div>
+                )}
+
+                {activeProject.highlights && (
+                  <div className="mb-6">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                      Key capabilities
+                    </p>
+
+                    <ul className="space-y-1.5">
+                      {activeProject.highlights.map(
+                        (highlight) => (
+                          <li
+                            key={highlight}
+                            className="flex items-start gap-2 text-sm text-neutral-300"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-400" />
+                            <span>{highlight}</span>
+                          </li>
+                        ),
+                      )}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="mb-6">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                    Technology stack
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {activeProject.tech.map(
+                      (technology) => (
+                        <span
+                          key={technology}
+                          className={`rounded-full px-3 py-0.5 text-xs font-semibold ${getTechColorClasses(
+                            technology,
+                          )}`}
+                        >
+                          {technology}
+                        </span>
+                      ),
+                    )}
+                  </div>
+                </div>
+
+                {(activeProject.liveUrl ||
+                  activeProject.github) && (
+                  <div className="mb-6 flex flex-wrap gap-3">
+                    {activeProject.liveUrl && (
+                      <a
+                        href={activeProject.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200"
+                      >
+                        <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
+                        Visit live website
+                      </a>
+                    )}
+
+                    {activeProject.github && (
+                      <a
+                        href={activeProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 bg-neutral-800 px-4 py-2.5 text-sm font-semibold text-white transition hover:border-neutral-500 hover:bg-neutral-700"
+                      >
+                        <i className="fa-brands fa-github" />
+                        View source code
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {activeMedia && (
+                  <section
+                    aria-label={`${activeProject.title} project gallery`}
+                  >
+                    <div className="mb-2 flex items-end justify-between gap-3">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                          Project gallery
+                        </p>
+
+                        {activeMedia.label && (
+                          <p className="mt-1 text-sm font-semibold text-neutral-200">
+                            {activeMedia.label}
+                          </p>
+                        )}
+                      </div>
+
+                      {hasMultipleSlides && (
+                        <p className="shrink-0 text-xs font-medium text-neutral-500">
+                          {slideIndex + 1} /{" "}
+                          {media.length}
                         </p>
                       )}
                     </div>
 
-                    {hasMultipleSlides && (
-                      <p className="shrink-0 text-xs font-medium text-neutral-500">
-                        {slideIndex + 1} / {media.length}
+                    <div className="relative overflow-hidden rounded-xl border border-neutral-700 bg-neutral-950/60">
+                      <div
+                        key={`${activeProject.title}-${slideIndex}`}
+                        className="animate-[fadeIn_250ms_ease-out]"
+                      >
+                        <img
+                          src={activeMedia.src}
+                          alt={activeMedia.alt}
+                          className="max-h-[62vh] w-full object-contain"
+                        />
+                      </div>
+
+                      {hasMultipleSlides && (
+                        <>
+                          <button
+                            type="button"
+                            onClick={showPreviousSlide}
+                            aria-label="Show previous image"
+                            className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white shadow-lg backdrop-blur transition hover:bg-black/90"
+                          >
+                            <i className="fa-solid fa-chevron-left" />
+                          </button>
+
+                          <button
+                            type="button"
+                            onClick={showNextSlide}
+                            aria-label="Show next image"
+                            className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white shadow-lg backdrop-blur transition hover:bg-black/90"
+                          >
+                            <i className="fa-solid fa-chevron-right" />
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    {activeMedia.caption && (
+                      <p className="mt-3 text-xs leading-relaxed text-neutral-400">
+                        {activeMedia.caption}
                       </p>
                     )}
-                  </div>
-
-                  <div className="relative overflow-hidden rounded-xl border border-neutral-700 bg-neutral-950/60">
-                    <div
-                      key={`${activeProject.title}-${slideIndex}`}
-                      className="animate-[fadeIn_250ms_ease-out]"
-                    >
-                      <img
-                        src={activeMedia.src}
-                        alt={activeMedia.alt}
-                        className="max-h-[62vh] w-full object-contain"
-                      />
-                    </div>
 
                     {hasMultipleSlides && (
-                      <>
-                        <button
-                          type="button"
-                          onClick={showPreviousSlide}
-                          aria-label="Show previous image"
-                          className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white shadow-lg backdrop-blur transition hover:bg-black/90"
-                        >
-                          <i className="fa-solid fa-chevron-left" />
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={showNextSlide}
-                          aria-label="Show next image"
-                          className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white shadow-lg backdrop-blur transition hover:bg-black/90"
-                        >
-                          <i className="fa-solid fa-chevron-right" />
-                        </button>
-                      </>
+                      <div
+                        className="mt-4 flex items-center justify-center gap-2"
+                        aria-label="Choose gallery image"
+                      >
+                        {media.map((item, index) => (
+                          <button
+                            key={`${item.src}-${index}`}
+                            type="button"
+                            onClick={() =>
+                              setSlideIndex(index)
+                            }
+                            aria-label={`Show image ${
+                              index + 1
+                            }`}
+                            aria-current={
+                              index === slideIndex
+                                ? "true"
+                                : undefined
+                            }
+                            className={`h-2.5 rounded-full transition-all ${
+                              index === slideIndex
+                                ? "w-7 bg-white"
+                                : "w-2.5 bg-neutral-600 hover:bg-neutral-400"
+                            }`}
+                          />
+                        ))}
+                      </div>
                     )}
-                  </div>
-
-                  {activeMedia.caption && (
-                    <p className="mt-3 text-xs leading-relaxed text-neutral-400">
-                      {activeMedia.caption}
-                    </p>
-                  )}
-
-                  {hasMultipleSlides && (
-                    <div
-                      className="mt-4 flex items-center justify-center gap-2"
-                      aria-label="Choose gallery image"
-                    >
-                      {media.map((item, index) => (
-                        <button
-                          key={`${item.src}-${index}`}
-                          type="button"
-                          onClick={() => setSlideIndex(index)}
-                          aria-label={`Show image ${index + 1}`}
-                          aria-current={
-                            index === slideIndex ? "true" : undefined
-                          }
-                          className={`h-2.5 rounded-full transition-all ${
-                            index === slideIndex
-                              ? "w-7 bg-white"
-                              : "w-2.5 bg-neutral-600 hover:bg-neutral-400"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </section>
-              )}
-            </div>
+                  </section>
+                )}
+              </div>
             </div>
           </div>
         </div>
