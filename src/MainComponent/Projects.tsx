@@ -37,6 +37,12 @@ interface ProjectMedia {
   caption?: string;
 }
 
+interface ProjectLink {
+  label: string;
+  shortLabel?: string;
+  url: string;
+}
+
 interface Project {
   title: string;
   description: string;
@@ -44,7 +50,7 @@ interface Project {
   projectType?: ProjectType;
   tech: string[];
   github?: string;
-  liveUrl?: string;
+  liveLinks?: ProjectLink[];
   highlights?: string[];
   media?: ProjectMedia[];
 }
@@ -75,9 +81,11 @@ const techCategoryMap: Record<string, TechCategory> = {
   "JWT Authentication": "backend",
   Stripe: "backend",
   "Stripe Integration": "backend",
+  "Payload CMS": "backend",
 
   // Databases & data
   PostgreSQL: "database",
+  pgvector: "database",
   Prisma: "database",
   "Prisma ORM": "database",
   MySQL: "database",
@@ -94,12 +102,17 @@ const techCategoryMap: Record<string, TechCategory> = {
   "Web Scraping": "automation",
   "HTML Parsing": "automation",
   "AI Integrations": "automation",
+  "OpenAI API": "automation",
+  RAG: "automation",
+  Embeddings: "automation",
   "Workflow Automation": "automation",
   "Data Processing": "automation",
 
   // Development tools
   Git: "tools",
   GitHub: "tools",
+  Docker: "tools",
+  "GitHub Actions": "tools",
   Vite: "tools",
   Webpack: "tools",
   Postman: "tools",
@@ -117,6 +130,7 @@ const techCategoryMap: Record<string, TechCategory> = {
   SOLID: "engineering",
   "Clean Code": "engineering",
   "Performance Optimization": "engineering",
+  Accessibility: "engineering",
 };
 
 const techColorClasses: Record<TechCategory, string> = {
@@ -138,13 +152,44 @@ function getTechColorClasses(technology: string) {
 
 const projectList: Project[] = [
   {
+    title: "Code Documentation Assistant",
+    description:
+      "A repository Q&A application that indexes public GitHub codebases and answers engineering questions with verifiable file and line references.",
+    ownership:
+      "Designed and built the full application, including repository ingestion, chunking, embeddings, vector retrieval, structured LLM responses, citation validation, persistence, testing and CI.",
+    projectType: "Personal project",
+    github: "https://github.com/LupsaLaurentiu/CodeDocAssistant",
+    highlights: [
+      "Explicit RAG ingestion and retrieval pipeline",
+      "Verified file and line citations",
+      "Atomic pgvector index replacement",
+      "Unit, database and Playwright tests in CI",
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "pgvector",
+      "Prisma ORM",
+      "OpenAI API",
+      "Docker",
+      "GitHub Actions",
+    ],
+  },
+
+  {
     title: "Sunshine Resort - Demo",
     description:
       "Full-stack hospitality platform for a premium resort, combining a marketing website, a custom booking engine and an admin property management dashboard (mini PMS).",
     ownership:
       "Independently designed and developed the entire platform, from system architecture and database design to the user interfaces, booking workflows and payment integration.",
     projectType: "Client project",
-    liveUrl: "https://sunshine-resort-web.vercel.app/ro",
+    liveLinks: [
+      {
+        label: "Visit live website",
+        url: "https://sunshine-resort-web.vercel.app/ro",
+      },
+    ],
     github: "https://github.com/LupsaLaurentiu/sunshine-resort",
     highlights: [
       "Public website, booking engine and admin PMS",
@@ -270,6 +315,42 @@ const projectList: Project[] = [
   },
 
   {
+    title: "Totul Pentru Dinamo — Palmares & About",
+    description:
+      "Two production editorial pages created for the Totul Pentru Dinamo platform, combining Dinamo's history, identity and community story in responsive, motion-rich experiences.",
+    ownership:
+      "Developed the complete frontend experience for the Palmares and About pages, including responsive layouts, animated statistics and timelines, interactive team content and CMS-backed data integration.",
+    projectType: "Client project",
+    liveLinks: [
+      {
+        label: "View Palmares page",
+        shortLabel: "Palmares",
+        url: "https://totulpentrudinamo.ro/palmares",
+      },
+      {
+        label: "View About page",
+        shortLabel: "About",
+        url: "https://totulpentrudinamo.ro/despre-noi",
+      },
+    ],
+    highlights: [
+      "Two production pages with distinct editorial identities",
+      "Animated statistics and historical timeline",
+      "Interactive team and community sections",
+      "Responsive, accessible and CMS-backed content",
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Payload CMS",
+      "Responsive Design",
+      "Accessibility",
+    ],
+  },
+
+  {
     title: "Website Technologies Scraper",
     description:
       "A multi-stage technology detection engine that combines HTTP analysis, browser rendering and evidence-based technology classification.",
@@ -343,7 +424,12 @@ const projectList: Project[] = [
     ownership:
       "Independently designed and developed the complete production website, including its responsive interface, reusable components, content structure, SEO implementation and deployment.",
     projectType: "Client project",
-    liveUrl: "https://www.topsidraexpert.ro/",
+    liveLinks: [
+      {
+        label: "Visit live website",
+        url: "https://www.topsidraexpert.ro/",
+      },
+    ],
     highlights: [
       "Responsive desktop and mobile experience",
       "SEO-oriented page and content structure",
@@ -554,21 +640,29 @@ export default function Projects() {
               </div>
 
               <div className="flex shrink-0 items-center gap-1">
-                {project.liveUrl && (
+                {project.liveLinks?.map((link) => (
                   <a
-                    href={project.liveUrl}
+                    key={link.url}
+                    href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="View live project"
-                    aria-label={`Open live project for ${project.title}`}
+                    title={link.label}
+                    aria-label={`${link.label} for ${project.title}`}
                     onClick={(event) =>
                       event.stopPropagation()
                     }
-                    className="flex h-8 w-8 items-center justify-center rounded-full transition hover:bg-neutral-700"
+                    className={`flex h-8 items-center justify-center transition hover:bg-neutral-700 ${
+                      link.shortLabel
+                        ? "gap-1.5 rounded-lg px-2.5 text-xs font-semibold"
+                        : "w-8 rounded-full"
+                    }`}
                   >
                     <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
+                    {link.shortLabel && (
+                      <span>{link.shortLabel}</span>
+                    )}
                   </a>
-                )}
+                ))}
 
                 {project.github && (
                   <a
@@ -673,18 +767,19 @@ export default function Projects() {
                 </div>
 
                 <div className="flex shrink-0 items-center gap-1">
-                  {activeProject.liveUrl && (
+                  {activeProject.liveLinks?.map((link) => (
                     <a
-                      href={activeProject.liveUrl}
+                      key={link.url}
+                      href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="View live project"
-                      aria-label={`Open live project for ${activeProject.title}`}
+                      title={link.label}
+                      aria-label={`${link.label} for ${activeProject.title}`}
                       className="flex h-9 w-9 items-center justify-center rounded-full text-neutral-300 transition hover:bg-neutral-800 hover:text-white"
                     >
                       <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
                     </a>
-                  )}
+                  ))}
 
                   {activeProject.github && (
                     <a
@@ -770,20 +865,21 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {(activeProject.liveUrl ||
+                {(activeProject.liveLinks?.length ||
                   activeProject.github) && (
                   <div className="mb-6 flex flex-wrap gap-3">
-                    {activeProject.liveUrl && (
+                    {activeProject.liveLinks?.map((link) => (
                       <a
-                        href={activeProject.liveUrl}
+                        key={link.url}
+                        href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200"
                       >
                         <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
-                        Visit live website
+                        {link.label}
                       </a>
-                    )}
+                    ))}
 
                     {activeProject.github && (
                       <a

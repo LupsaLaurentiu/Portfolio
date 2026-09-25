@@ -1,69 +1,44 @@
-# React + TypeScript + Vite
+# Laurentiu Lupsa — Software Engineering Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio showcasing full-stack applications, client work, automation systems and AI-assisted developer tooling.
 
-Currently, two official plugins are available:
+**Live website:** [portfolio-lemon-two-32.vercel.app](https://portfolio-lemon-two-32.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Featured work
 
-## Expanding the ESLint configuration
+- **Code Documentation Assistant** — repository Q&A with Next.js, OpenAI, PostgreSQL and pgvector.
+- **Sunshine Resort** — bilingual booking engine, payment workflow and custom property-management system.
+- **Totul Pentru Dinamo** — the production [Palmares](https://totulpentrudinamo.ro/palmares) and [Despre noi](https://totulpentrudinamo.ro/despre-noi) pages.
+- **Website Technologies Scraper** — evidence-based technology detection using HTTP analysis and browser automation.
+- **AI Receptionist for Clinics** — clinic administration and appointment-scheduling platform.
+- **Top Sidra Expert** — responsive production website for a construction and transport company.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Portfolio features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Responsive layout for desktop and mobile
+- Expandable project details with live and source-code links
+- Project galleries with keyboard navigation
+- Accessible modal controls and reduced-motion-aware interactions
+- Smooth section navigation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lenis
+
+## Run locally
+
+```bash
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Quality checks
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run lint
+npm run build
 ```

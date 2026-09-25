@@ -1,11 +1,24 @@
 const skillGroups = [
   {
+    title: "Programming Languages",
+    color: "slate",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "Java",
+      "SQL",
+      "C/C++",
+      "PHP",
+    ],
+  },
+  {
     title: "Frontend",
     color: "blue",
     skills: [
       "React",
       "Next.js",
-      "TypeScript",
+      "Angular",
       "Tailwind CSS",
       "Responsive Design",
     ],
@@ -20,6 +33,7 @@ const skillGroups = [
       "API Design",
       "JWT Authentication",
       "Stripe Integration",
+      "Payload CMS",
     ],
   },
   {
@@ -27,6 +41,7 @@ const skillGroups = [
     color: "cyan",
     skills: [
       "PostgreSQL",
+      "pgvector",
       "Prisma ORM",
       "Microsoft SQL Server",
       "MySQL",
@@ -36,7 +51,9 @@ const skillGroups = [
     title: "Automation & AI",
     color: "purple",
     skills: [
-      "Python",
+      "OpenAI API",
+      "RAG",
+      "Embeddings",
       "Playwright",
       "Web Scraping",
       "AI Integrations",
@@ -49,6 +66,8 @@ const skillGroups = [
     skills: [
       "Git",
       "GitHub",
+      "Docker",
+      "GitHub Actions",
       "Vite",
       "Postman",
       "Figma",
@@ -66,11 +85,13 @@ const skillGroups = [
       "SOLID",
       "Clean Code",
       "Performance Optimization",
+      "Accessibility",
     ],
   },
 ];
 
 const colorClasses = {
+  slate: "bg-slate-700 text-slate-100",
   blue: "bg-blue-800 text-blue-200",
   green: "bg-green-800 text-green-200",
   cyan: "bg-cyan-900 text-cyan-200",
@@ -84,7 +105,7 @@ export default function Skills() {
     <section id="skills" className="mb-10 max-w-3xl scroll-mt-24">
       <div className="mb-5">
         <h2 className="mb-2 text-2xl font-bold md:text-3xl">
-          Tehnical Skills
+          Technical Skills
         </h2>
 
         <p className="max-w-2xl text-sm leading-relaxed text-neutral-400">
