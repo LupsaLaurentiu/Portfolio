@@ -93,10 +93,12 @@ const techCategoryMap: Record<string, TechCategory> = {
   Stripe: "backend",
   "Stripe Integration": "backend",
   "Payload CMS": "backend",
+  "Web Push": "backend",
 
   // Databases & data
   PostgreSQL: "database",
   pgvector: "database",
+  Supabase: "database",
   Prisma: "database",
   "Prisma ORM": "database",
   MySQL: "database",
@@ -142,6 +144,8 @@ const techCategoryMap: Record<string, TechCategory> = {
   "Clean Code": "engineering",
   "Performance Optimization": "engineering",
   Accessibility: "engineering",
+  PWA: "engineering",
+  "Service Workers": "engineering",
 };
 
 const techColorClasses: Record<TechCategory, string> = {
@@ -555,6 +559,22 @@ const projectList: Project[] = [
   },
 ];
 
+const additionalProjects = [
+  {
+    title: "DailyLove PWA",
+    description:
+      "An installable iPhone PWA that unlocks private daily content on a timezone-aware schedule and delivers Web Push notifications, with server-side content protection, Supabase persistence and idempotent delivery tracking.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PWA",
+      "Web Push",
+      "Service Workers",
+      "Supabase",
+    ],
+  },
+];
+
 export default function Projects() {
   const lenis = useLenis();
 
@@ -811,6 +831,53 @@ export default function Projects() {
             </span>
           </article>
         ))}
+      </div>
+
+      <div className="mt-8 border-t border-neutral-800 pt-6">
+        <div className="mb-4 flex items-center gap-2">
+          <i
+            className="fa-solid fa-lock text-xs text-neutral-500"
+            aria-hidden="true"
+          />
+          <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-neutral-400">
+            Additional Engineering Work
+          </h3>
+        </div>
+
+        <div className="grid gap-3">
+          {additionalProjects.map((project) => (
+            <article
+              key={project.title}
+              className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-5"
+            >
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                <h4 className="font-semibold text-white">
+                  {project.title}
+                </h4>
+                <span className="rounded-full border border-neutral-800 px-2.5 py-0.5 text-[10px] font-medium text-neutral-500">
+                  Private personal project
+                </span>
+              </div>
+
+              <p className="max-w-2xl text-sm leading-relaxed text-neutral-400">
+                {project.description}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((technology) => (
+                  <span
+                    key={technology}
+                    className={`rounded-full px-3 py-0.5 text-xs font-semibold ${getTechColorClasses(
+                      technology,
+                    )}`}
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
 
       {activeProject && (

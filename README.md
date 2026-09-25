@@ -13,6 +13,10 @@ Personal portfolio showcasing full-stack applications, client work, automation s
 - **AI Receptionist for Clinics** — clinic administration and appointment-scheduling platform.
 - **Top Sidra Expert** — responsive production website for a construction and transport company.
 
+## Additional engineering work
+
+- **DailyLove PWA** — private installable iPhone PWA with timezone-aware daily content, Web Push notifications, server-side content protection, Supabase persistence and idempotent delivery tracking.
+
 ## Portfolio features
 
 - Responsive layout for desktop and mobile
