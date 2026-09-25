@@ -3,8 +3,13 @@ import Lenis from "lenis";
 import { useLenis } from "lenis/react";
 
 import aiReceptionistArchitecture from "../assets/ai-receptionist-architecture.svg";
+import codeDocSourcePreview from "../assets/codedoc-source-preview.png";
+import codeDocUxWalkthrough from "../assets/codedoc-ux-walkthrough.webm";
+import codeDocWorkspace from "../assets/codedoc-workspace.png";
 import scraperPipeline from "../assets/scraper-pipeline.svg";
 import sunshineArchitecture from "../assets/sunshine-resort-architecture.svg";
+import tpdAbout from "../assets/tpd-about.png";
+import tpdPalmares from "../assets/tpd-palmares.png";
 
 import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
@@ -33,6 +38,7 @@ type ProjectType =
 interface ProjectMedia {
   src: string;
   alt: string;
+  type?: "image" | "video";
   label?: string;
   caption?: string;
 }
@@ -174,6 +180,30 @@ const projectList: Project[] = [
       "OpenAI API",
       "Docker",
       "GitHub Actions",
+    ],
+    media: [
+      {
+        src: codeDocWorkspace,
+        alt: "Code Documentation Assistant repository Q&A workspace",
+        label: "Repository Q&A workspace",
+        caption:
+          "Indexed repository workspace showing a grounded answer alongside its verified file and line citation.",
+      },
+      {
+        src: codeDocSourcePreview,
+        alt: "Code Documentation Assistant cited source preview",
+        label: "Cited source inspection",
+        caption:
+          "Source preview used to inspect the exact code range behind an answer without leaving the conversation.",
+      },
+      {
+        src: codeDocUxWalkthrough,
+        alt: "Code Documentation Assistant scripted UX walkthrough",
+        type: "video",
+        label: "UX walkthrough",
+        caption:
+          "Short scripted walkthrough using an isolated test fixture and mocked provider responses; it demonstrates the product flow, not live-model accuracy.",
+      },
     ],
   },
 
@@ -347,6 +377,22 @@ const projectList: Project[] = [
       "Payload CMS",
       "Responsive Design",
       "Accessibility",
+    ],
+    media: [
+      {
+        src: tpdPalmares,
+        alt: "Totul Pentru Dinamo Palmares page",
+        label: "Palmares",
+        caption:
+          "Editorial hero introducing Dinamo's sporting history, followed by animated statistics, trophy stories and a historical timeline.",
+      },
+      {
+        src: tpdAbout,
+        alt: "Totul Pentru Dinamo About page",
+        label: "About",
+        caption:
+          "Community-focused hero for the About page, leading into the platform mission, story, team and interactive editorial sections.",
+      },
     ],
   },
 
@@ -925,11 +971,22 @@ export default function Projects() {
                         key={`${activeProject.title}-${slideIndex}`}
                         className="animate-[fadeIn_250ms_ease-out]"
                       >
-                        <img
-                          src={activeMedia.src}
-                          alt={activeMedia.alt}
-                          className="max-h-[62vh] w-full object-contain"
-                        />
+                        {activeMedia.type === "video" ? (
+                          <video
+                            src={activeMedia.src}
+                            controls
+                            preload="metadata"
+                            playsInline
+                            aria-label={activeMedia.alt}
+                            className="max-h-[62vh] w-full bg-black object-contain"
+                          />
+                        ) : (
+                          <img
+                            src={activeMedia.src}
+                            alt={activeMedia.alt}
+                            className="max-h-[62vh] w-full object-contain"
+                          />
+                        )}
                       </div>
 
                       {hasMultipleSlides && (
