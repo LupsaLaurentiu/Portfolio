@@ -11,11 +11,8 @@ Personal portfolio showcasing full-stack applications, client work, automation s
 - **Totul Pentru Dinamo** — the production [Palmares](https://totulpentrudinamo.ro/palmares) and [Despre noi](https://totulpentrudinamo.ro/despre-noi) pages.
 - **Website Technologies Scraper** — evidence-based technology detection using HTTP analysis and browser automation.
 - **AI Receptionist for Clinics** — clinic administration and appointment-scheduling platform.
-- **Top Sidra Expert** — responsive production website for a construction and transport company.
-
-## Additional engineering work
-
 - **DailyLove PWA** — private installable iPhone PWA with timezone-aware daily content, Web Push notifications, server-side content protection, Supabase persistence and idempotent delivery tracking.
+- **Top Sidra Expert** — responsive production website for a construction and transport company.
 
 ## Portfolio features
 
