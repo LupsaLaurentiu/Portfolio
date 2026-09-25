@@ -9,7 +9,12 @@ import codeDocWorkspace from "../assets/codedoc-workspace.png";
 import scraperPipeline from "../assets/scraper-pipeline.svg";
 import sunshineArchitecture from "../assets/sunshine-resort-architecture.svg";
 import tpdAbout from "../assets/tpd-about.png";
+import tpdAboutEditorial from "../assets/tpd-about-editorial.png";
+import tpdAboutMission from "../assets/tpd-about-mission.png";
 import tpdPalmares from "../assets/tpd-palmares.png";
+import tpdPalmaresStats from "../assets/tpd-palmares-stats.png";
+import tpdPalmaresTimeline from "../assets/tpd-palmares-timeline.png";
+import tpdPalmaresTrophies from "../assets/tpd-palmares-trophies.png";
 
 import topSidraPreview from "../assets/top-sidra-responsive-preview.png";
 import topSidraPreview2 from "../assets/top-sidra-responsive-preview-2.png";
@@ -382,16 +387,51 @@ const projectList: Project[] = [
       {
         src: tpdPalmares,
         alt: "Totul Pentru Dinamo Palmares page",
-        label: "Palmares",
+        label: "Palmares — Hero",
         caption:
           "Editorial hero introducing Dinamo's sporting history, followed by animated statistics, trophy stories and a historical timeline.",
       },
       {
+        src: tpdPalmaresStats,
+        alt: "Totul Pentru Dinamo animated trophy statistics",
+        label: "Palmares — Statistics",
+        caption:
+          "Large-format animated statistics combine trophy imagery, historical totals and responsive editorial typography.",
+      },
+      {
+        src: tpdPalmaresTrophies,
+        alt: "Totul Pentru Dinamo trophy history section",
+        label: "Palmares — Trophy stories",
+        caption:
+          "Alternating trophy stories pair major achievements with historical photography in a cinematic dark layout.",
+      },
+      {
+        src: tpdPalmaresTimeline,
+        alt: "Totul Pentru Dinamo historical timeline",
+        label: "Palmares — Historical timeline",
+        caption:
+          "Responsive visual timeline presenting the defining moments in the club's history from 1948 onward.",
+      },
+      {
         src: tpdAbout,
         alt: "Totul Pentru Dinamo About page",
-        label: "About",
+        label: "About — Hero",
         caption:
           "Community-focused hero for the About page, leading into the platform mission, story, team and interactive editorial sections.",
+      },
+      {
+        src: tpdAboutMission,
+        alt: "Totul Pentru Dinamo mission section",
+        label: "About — Mission",
+        caption:
+          "Mission section structured around three editorial pillars: informing supporters, preserving history and strengthening the community.",
+      },
+      {
+        src: tpdAboutEditorial,
+        alt: "Totul Pentru Dinamo editorial areas section",
+        label: "About — Editorial areas",
+        caption:
+          "Interactive directory connecting visitors with news, club history, community stories, the marketplace and live content.",
       },
     ],
   },
